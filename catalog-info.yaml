@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: chatbot-f1742471050353-gitops
+  description: This is GitOps manifest for chatbot-f1742471050353   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=chatbot-f1742471050353
+    janus-idp.io/tekton: chatbot-f1742471050353 
+    backstage.io/kubernetes-id: chatbot-f1742471050353 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:chatbot-f1742471050353  
